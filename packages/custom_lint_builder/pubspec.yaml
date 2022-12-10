@@ -13,7 +13,10 @@ dependencies:
   # Using tight constraints as custom_lint_builder communicate with each-other
   # using a specific contract
   custom_lint:
-    path: ../custom_lint
+    git:
+      url: https://github.com/osm-y/dart_custom_lint.git
+      ref: optional_ignore
+      path: packages/custom_lint
   hotreloader: ^3.0.5
   meta: ^1.7.0
   package_config: ^2.0.2
