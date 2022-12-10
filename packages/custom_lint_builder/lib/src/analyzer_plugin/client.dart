@@ -348,6 +348,7 @@ extension<T> on Stream<T> {
 final _ignoreRegex = RegExp(r'//\s*ignore\s*:(.+)$', multiLine: true);
 
 bool _isIgnored(Lint lint, LineInfo lineInfo, String source) {
+  if (lint.canIgnore != true) return false;
   // -1 because lines starts at 1 not 0
   final line = lint.location.startLine - 1;
 

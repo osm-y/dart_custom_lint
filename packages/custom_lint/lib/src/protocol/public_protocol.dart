@@ -39,6 +39,7 @@ class Lint {
     this.severity = LintSeverity.info,
     this.correction,
     this.url,
+    this.canIgnore,
     Stream<analyzer_plugin.AnalysisErrorFixes> Function(Lint lint)?
         getAnalysisErrorFixes,
   }) : _getAnalysisErrorFixes = getAnalysisErrorFixes;
@@ -67,6 +68,8 @@ class Lint {
 
   /// The URL of a page containing documentation associated with this error.
   final String? url;
+
+  final bool? canIgnore;
 
   /// Converts a [Lint] into an [analyzer_plugin.AnalysisError]
   analyzer_plugin.AnalysisError asAnalysisError() {
